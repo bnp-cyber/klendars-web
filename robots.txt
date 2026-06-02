@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://klendars.com/sitemap.xml

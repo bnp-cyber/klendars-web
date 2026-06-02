@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KLENDARS — Tu vida, organizada</title>
+  <meta name="description" content="KLENDARS: organiza tus cuentas, presupuestos, listas, compras y eventos compartidos en una sola app, con Mochi, tu asistente. Próximamente en la App Store." />
+  <meta name="theme-color" content="#080A14" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="KLENDARS — Tu vida, organizada" />
+  <meta property="og:description" content="Cuentas, presupuestos, listas y eventos compartidos en una sola app, con Mochi, tu asistente. Próximamente en la App Store." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://klendars.com" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%234F8CFF'/><text x='50' y='70' font-size='58' text-anchor='middle' fill='white' font-family='Arial'>K</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="aurora"></div>
+
+  <!-- ============ MOCHI SVG (reutilizable) ============ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="mochi" viewBox="0 0 120 124">
+      <path d="M60 6 C90 6 110 28 110 60 C110 96 90 118 60 118 C30 118 10 96 10 60 C10 28 30 6 60 6 Z" fill="currentColor"/>
+      <ellipse cx="42" cy="38" rx="17" ry="12" fill="rgba(255,255,255,.28)"/>
+      <circle cx="46" cy="64" r="6.5" fill="#0b1020"/>
+      <circle cx="74" cy="64" r="6.5" fill="#0b1020"/>
+      <circle cx="48" cy="62" r="2" fill="#fff"/>
+      <circle cx="76" cy="62" r="2" fill="#fff"/>
+      <path d="M45 82 Q60 95 75 82" stroke="#0b1020" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="mochi-happy" viewBox="0 0 120 124">
+      <path d="M60 6 C90 6 110 28 110 60 C110 96 90 118 60 118 C30 118 10 96 10 60 C10 28 30 6 60 6 Z" fill="currentColor"/>
+      <ellipse cx="42" cy="38" rx="17" ry="12" fill="rgba(255,255,255,.28)"/>
+      <path d="M38 64 Q46 56 54 64" stroke="#0b1020" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M66 64 Q74 56 82 64" stroke="#0b1020" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M46 80 Q60 94 74 80" stroke="#0b1020" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <span class="logo">K</span> KLENDARS
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#features" data-i18n="nav.features">Funciones</a>
+        <a href="#mochi-sec" data-i18n="nav.mochi">Mochi</a>
+        <a href="#about" data-i18n="nav.about">Quiénes somos</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#contact" data-i18n="nav.contact">Contacto</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+          <button data-lang="es" class="active">ES</button>
+          <button data-lang="en">EN</button>
+        </div>
+        <a href="#contact" class="btn btn-primary" data-i18n="nav.cta">Contáctanos</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menú">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="badge-soon"><span class="dot"></span><span data-i18n="hero.badge">Próximamente en la App Store</span></span>
+          <h1><span data-i18n="hero.title1">Tu vida,</span> <span class="gradient-text" data-i18n="hero.title2">organizada.</span></h1>
+          <p class="lead" data-i18n="hero.lead">Cuentas, presupuestos, listas inteligentes y eventos compartidos con tus amigos — todo en una sola app, con Mochi como tu asistente. Simple y privada.</p>
+          <div class="hero-cta">
+            <a href="#features" class="btn btn-primary" data-i18n="hero.cta1">Descubre qué hace</a>
+            <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">Mantente al tanto</a>
+          </div>
+          <div class="hero-trust">
+            <span>🔒 <span data-i18n="hero.trust1">Privada por diseño</span></span>
+            <span>🌎 <span data-i18n="hero.trust2">Español e inglés</span></span>
+            <span>🍎 <span data-i18n="hero.trust3">Para iPhone</span></span>
+          </div>
+        </div>
+
+        <div class="phone-wrap reveal">
+          <div class="phone-glow"></div>
+          <svg class="mochi-float" style="color:var(--accent)" aria-hidden="true"><use href="#mochi"/></svg>
+          <div class="phone">
+            <div class="notch"></div>
+            <div class="phone-screen">
+              <div class="mock-h" data-i18n="mock.title">Resumen del mes</div>
+              <div class="mock-card">
+                <div class="mock-ic tint-blue">🧾</div>
+                <div><div class="t" data-i18n="mock.bill">Cuentas por pagar</div><div class="s" data-i18n="mock.bill.s">Vence en 3 días</div></div>
+                <div class="amt" style="color:var(--primary)">$420</div>
+              </div>
+              <div class="mock-card">
+                <div class="mock-ic tint-green">💰</div>
+                <div><div class="t" data-i18n="mock.save">Meta de ahorro</div><div class="s" data-i18n="mock.save.s">68% completada</div></div>
+                <div class="amt" style="color:var(--lime)">$1.2k</div>
+              </div>
+              <div class="mock-card">
+                <div class="mock-ic tint-amber">🛒</div>
+                <div><div class="t" data-i18n="mock.list">Lista del súper</div><div class="s" data-i18n="mock.list.s">Compartida con Ana</div></div>
+                <div class="amt" style="color:var(--amber)">8</div>
+              </div>
+              <div class="mock-card">
+                <div class="mock-ic tint-magenta">🎉</div>
+                <div><div class="t" data-i18n="mock.event">Cena de cumpleaños</div><div class="s" data-i18n="mock.event.s">4 amigos · sáb</div></div>
+                <div class="amt" style="color:var(--magenta)">→</div>
+              </div>
+              <div class="mock-card mock-mochi">
+                <svg class="mock-blob" style="color:var(--accent)" aria-hidden="true"><use href="#mochi"/></svg>
+                <div><div class="t" data-i18n="mock.insight">Gastas menos que el mes pasado</div><div class="s" data-i18n="mock.insight.s">-12% en comida · dice Mochi</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES (overview) ============ -->
+    <section id="features">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="features.eyebrow">Todo en un lugar</span>
+          <h2 data-i18n="features.title">Una app, todo organizado</h2>
+          <p data-i18n="features.sub">Desde tus finanzas del día a día hasta los planes con amigos. KLENDARS lo mantiene simple.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature reveal">
+            <div class="ic tint-blue">🧾</div>
+            <h3 data-i18n="feat.finance.t">Cuentas y pagos</h3>
+            <p data-i18n="feat.finance.d">Registra tus cuentas, métodos de pago y recordatorios para no olvidar ningún vencimiento.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="ic tint-purple">📊</div>
+            <h3 data-i18n="feat.budget.t">Presupuestos e ideas</h3>
+            <p data-i18n="feat.budget.d">Lleva ingresos, deudas y metas de ahorro, y recibe ideas claras sobre cómo va tu mes.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="ic tint-amber">🛒</div>
+            <h3 data-i18n="feat.lists.t">Listas inteligentes</h3>
+            <p data-i18n="feat.lists.d">Escanea códigos de barras y fechas, organiza tus compras y encuentra tiendas cercanas.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="ic tint-green">🤝</div>
+            <h3 data-i18n="feat.shared.t">Compartido con amigos</h3>
+            <p data-i18n="feat.shared.d">Comparte listas, eventos y gastos. Lleven juntos la cuenta sin enredos ni capturas de pantalla.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="ic tint-magenta">🔔</div>
+            <h3 data-i18n="feat.remind.t">Recordatorios</h3>
+            <p data-i18n="feat.remind.d">Notificaciones a tiempo para pagos, eventos y tareas, para que nada se te escape.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="ic tint-cyan">🔒</div>
+            <h3 data-i18n="feat.privacy.t">Privacidad primero</h3>
+            <p data-i18n="feat.privacy.d">Tus datos son tuyos. Bloqueo con Face ID y sin números de tarjeta completos. No es un banco.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DEEP FEATURES (funciones a fondo) ============ -->
+    <section id="deep">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="deep.eyebrow">Funciones a fondo</span>
+          <h2 data-i18n="deep.title">Cinco módulos, una sola app</h2>
+          <p data-i18n="deep.sub">Cada parte de KLENDARS está pensada para un momento de tu día. Así se ven por dentro.</p>
+        </div>
+
+        <!-- 1. Money / Calendario -->
+        <div class="deep-row reveal">
+          <div class="deep-text">
+            <span class="deep-tag tint-blue">💸 <span data-i18n="deep.money.tag">Money</span></span>
+            <h3 data-i18n="deep.money.t">Tu mes financiero, de un vistazo</h3>
+            <p data-i18n="deep.money.d">Calendario, facturas y presupuesto en un mismo lugar. Mira lo gastado, lo compartido y lo que viene — por semana, mes o año.</p>
+            <ul class="deep-list">
+              <li data-i18n="deep.money.l1">Vista semana · mes · año</li>
+              <li data-i18n="deep.money.l2">Gastado, compartido y próximos pagos</li>
+              <li data-i18n="deep.money.l3">Resumen anual exportable para impuestos</li>
+            </ul>
+          </div>
+          <div class="deep-visual">
+            <div class="mini-card">
+              <div class="mini-h" data-i18n="deep.money.mh">Gastado este mes</div>
+              <div class="mini-amt">$1,240</div>
+              <div class="mini-bar"><span style="width:31%"></span></div>
+              <div class="mini-rows">
+                <div><span class="dotc tint-blue"></span><span data-i18n="deep.money.r1">Personal</span><b>$820</b></div>
+                <div><span class="dotc tint-amber"></span><span data-i18n="deep.money.r2">Compras</span><b>$280</b></div>
+                <div><span class="dotc tint-magenta"></span><span data-i18n="deep.money.r3">Eventos</span><b>$140</b></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Presupuesto / salud financiera -->
+        <div class="deep-row reverse reveal">
+          <div class="deep-text">
+            <span class="deep-tag tint-green">🎯 <span data-i18n="deep.budget.tag">Presupuesto</span></span>
+            <h3 data-i18n="deep.budget.t">Sabe si llegas a fin de mes</h3>
+            <p data-i18n="deep.budget.d">Un puntaje de salud financiera, tu disponible en tiempo real y una proyección del próximo mes. Sin sorpresas.</p>
+            <ul class="deep-list">
+              <li data-i18n="deep.budget.l1">Salud financiera 0–100 con insights</li>
+              <li data-i18n="deep.budget.l2">Disponible y proyección al cierre</li>
+              <li data-i18n="deep.budget.l3">Ingresos, deudas y metas de ahorro</li>
+            </ul>
+          </div>
+          <div class="deep-visual">
+            <div class="mini-card">
+              <div class="health-ring"><div class="ring-num">100</div></div>
+              <div class="mini-h center" data-i18n="deep.budget.mh">Salud financiera: Excelente</div>
+              <div class="mini-pill green" data-i18n="deep.budget.pill">✓ En ruta · $4,000 disponible</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Listas -->
+        <div class="deep-row reveal">
+          <div class="deep-text">
+            <span class="deep-tag tint-amber">🗂️ <span data-i18n="deep.lists.tag">Listas</span></span>
+            <h3 data-i18n="deep.lists.t">Listas inteligentes y carpetas</h3>
+            <p data-i18n="deep.lists.d">Organiza todo por carpetas, escanea códigos de barras y fechas de caducidad, y comparte listas con quien quieras.</p>
+            <ul class="deep-list">
+              <li data-i18n="deep.lists.l1">Carpetas y listas ilimitadas</li>
+              <li data-i18n="deep.lists.l2">Escaneo de código de barras y caducidad</li>
+              <li data-i18n="deep.lists.l3">Listas compartidas en tiempo real</li>
+            </ul>
+          </div>
+          <div class="deep-visual">
+            <div class="mini-card">
+              <div class="mini-h" data-i18n="deep.lists.mh">Lista del súper</div>
+              <div class="check-row done"><span class="cbox">✓</span><span data-i18n="deep.lists.i1">Café</span></div>
+              <div class="check-row done"><span class="cbox">✓</span><span data-i18n="deep.lists.i2">Pan</span></div>
+              <div class="check-row"><span class="cbox"></span><span data-i18n="deep.lists.i3">Aguacates</span></div>
+              <div class="check-row"><span class="cbox"></span><span data-i18n="deep.lists.i4">Leche de avena</span></div>
+              <div class="mini-pill amber" data-i18n="deep.lists.pill">👥 Compartida con Ana</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Amigos / gastos compartidos -->
+        <div class="deep-row reverse reveal">
+          <div class="deep-text">
+            <span class="deep-tag tint-magenta">👥 <span data-i18n="deep.friends.tag">Amigos</span></span>
+            <h3 data-i18n="deep.friends.t">Cuentas claras con tu gente</h3>
+            <p data-i18n="deep.friends.d">Conecta por código QR, divide gastos y salda cuentas sin enredos. Todo sincronizado al instante.</p>
+            <ul class="deep-list">
+              <li data-i18n="deep.friends.l1">Agrega amigos con tu QR</li>
+              <li data-i18n="deep.friends.l2">Divide gastos y eventos compartidos</li>
+              <li data-i18n="deep.friends.l3">Salda cuentas — sin capturas ni notas sueltas</li>
+            </ul>
+          </div>
+          <div class="deep-visual">
+            <div class="mini-card">
+              <div class="friend-row"><span class="av">A</span><div><b>Ana</b><span data-i18n="deep.friends.r1">te debe</span></div><span class="bal pos">+$24</span></div>
+              <div class="friend-row"><span class="av av2">L</span><div><b>Luis</b><span data-i18n="deep.friends.r2">le debes</span></div><span class="bal neg">−$12</span></div>
+              <div class="mini-pill magenta" data-i18n="deep.friends.pill">⚖️ Saldo del grupo: equilibrado</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Facturas / escaneo -->
+        <div class="deep-row reveal">
+          <div class="deep-text">
+            <span class="deep-tag tint-cyan">🧾 <span data-i18n="deep.bills.tag">Facturas</span></span>
+            <h3 data-i18n="deep.bills.t">Registra una factura en segundos</h3>
+            <p data-i18n="deep.bills.d">Escanea el recibo y KLENDARS detecta monto, fecha y comercio. Asigna categoría y método de pago — guardamos la referencia, nunca el número completo.</p>
+            <ul class="deep-list">
+              <li data-i18n="deep.bills.l1">Escaneo de recibo con detección automática</li>
+              <li data-i18n="deep.bills.l2">10 categorías + recordatorios</li>
+              <li data-i18n="deep.bills.l3">Métodos de pago seguros (solo últimos 4 dígitos)</li>
+            </ul>
+          </div>
+          <div class="deep-visual">
+            <div class="mini-card">
+              <div class="scan-banner">📷 <span data-i18n="deep.bills.scan">Escanear recibo</span></div>
+              <div class="mini-h" data-i18n="deep.bills.mh">Nueva factura</div>
+              <div class="mini-amt small">$48.90</div>
+              <div class="cat-row">
+                <span class="cat tint-blue">🏠</span><span class="cat tint-amber">⚡</span>
+                <span class="cat tint-magenta">🛒</span><span class="cat tint-green">🍽️</span>
+                <span class="cat tint-cyan active">🎬</span>
+              </div>
+              <div class="mini-pill blue" data-i18n="deep.bills.pill">💳 Crédito ···· 1234</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MOCHI ============ -->
+    <section id="mochi-sec" class="mochi-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="mochi.eyebrow">Conoce a Mochi</span>
+          <h2 data-i18n="mochi.title">Tu asistente que entiende tu día</h2>
+          <p data-i18n="mochi.sub">Mochi vive en la app, te da ideas sobre tu dinero y cambia de personalidad según dónde estés. Háblale por voz o tócalo desde la Isla Dinámica.</p>
+        </div>
+
+        <div class="mochi-grid">
+          <div class="mochi-card reveal">
+            <svg class="mochi-blob lg" style="color:var(--accent)" aria-hidden="true"><use href="#mochi"/></svg>
+            <h3>Mochi</h3>
+            <span class="mochi-role" data-i18n="mochi.money">Money · Análisis financiero</span>
+          </div>
+          <div class="mochi-card reveal">
+            <svg class="mochi-blob lg" style="color:var(--amber)" aria-hidden="true"><use href="#mochi-happy"/></svg>
+            <h3>Sunny</h3>
+            <span class="mochi-role" data-i18n="mochi.today">Today · Pendientes del día</span>
+          </div>
+          <div class="mochi-card reveal">
+            <svg class="mochi-blob lg" style="color:var(--lime)" aria-hidden="true"><use href="#mochi-happy"/></svg>
+            <h3>Vela</h3>
+            <span class="mochi-role" data-i18n="mochi.lists">Lists · Orden y listas</span>
+          </div>
+          <div class="mochi-card reveal">
+            <svg class="mochi-blob lg" style="color:var(--magenta)" aria-hidden="true"><use href="#mochi-happy"/></svg>
+            <h3>Coral</h3>
+            <span class="mochi-role" data-i18n="mochi.friends">Friends · Tu círculo</span>
+          </div>
+          <div class="mochi-card reveal">
+            <svg class="mochi-blob lg" style="color:var(--cyan)" aria-hidden="true"><use href="#mochi"/></svg>
+            <h3>Sage</h3>
+            <span class="mochi-role" data-i18n="mochi.settings">Settings · Configuración</span>
+          </div>
+        </div>
+
+        <div class="mochi-feats reveal">
+          <div class="mochi-feat"><span>🎙️</span><div><b data-i18n="mochi.f1.t">Comandos de voz</b><p data-i18n="mochi.f1.d">"Marca la renta como pagada" o "¿cuánto debo?" — Mochi te responde.</p></div></div>
+          <div class="mochi-feat"><span>🏝️</span><div><b data-i18n="mochi.f2.t">Isla Dinámica</b><p data-i18n="mochi.f2.d">Tu presupuesto y pendientes en vivo, sin abrir la app.</p></div></div>
+          <div class="mochi-feat"><span>💡</span><div><b data-i18n="mochi.f3.t">Ideas con sentido</b><p data-i18n="mochi.f3.d">Patrones de gasto y avisos útiles, en lenguaje claro.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT / objetivo ============ -->
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-card reveal">
+          <span class="eyebrow" data-i18n="about.eyebrow">Quiénes somos</span>
+          <h2 data-i18n="about.title">Organizar tu vida, sin fricción</h2>
+          <p data-i18n="about.p1">KLENDARS nace para resolver algo simple: tener tus pagos, listas y planes con amigos en un mismo lugar, sin saltar entre hojas de cálculo y apps separadas.</p>
+          <p data-i18n="about.p2">Es una herramienta de organización personal — no un banco ni asesoría financiera. No movemos tu dinero; te ayudamos a verlo y llevar el control, siempre de forma privada.</p>
+          <div class="mission">
+            <span class="mission-label" data-i18n="about.mission.l">Nuestro objetivo</span>
+            <p data-i18n="about.mission.d">Que organizar tu vida sea tan simple que de verdad lo hagas cada día — claro, bilingüe y privado por diseño.</p>
+          </div>
+          <div class="pill-row">
+            <span class="pill" data-i18n="about.pill1">Privacidad primero</span>
+            <span class="pill" data-i18n="about.pill2">Diseño claro</span>
+            <span class="pill" data-i18n="about.pill3">Bilingüe</span>
+            <span class="pill" data-i18n="about.pill4">Hecho con cariño</span>
+          </div>
+          <p class="company-line" data-i18n="about.company">KLENDARS es un producto de New Horizons y Cargo LLC.</p>
+        </div>
+        <div class="stats reveal">
+          <div class="stat"><div class="n gradient-text">5</div><div class="l" data-i18n="about.stat1">Módulos en una app</div></div>
+          <div class="stat"><div class="n gradient-text">2</div><div class="l" data-i18n="about.stat2">Idiomas</div></div>
+          <div class="stat"><div class="n gradient-text">100%</div><div class="l" data-i18n="about.stat3">Tus datos, tuyos</div></div>
+          <div class="stat"><div class="n gradient-text">0</div><div class="l" data-i18n="about.stat4">Compras dentro de la app</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRUST + FAQ ============ -->
+    <section id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="trust.eyebrow">Confianza</span>
+          <h2 data-i18n="trust.title">Pensada para cuidar lo tuyo</h2>
+          <p data-i18n="trust.sub">Tu información financiera es sensible. Así la tratamos.</p>
+        </div>
+        <div class="trust-row reveal">
+          <div class="trust-badge"><span>🚫🏦</span><b data-i18n="trust.b1">No es un banco</b><p data-i18n="trust.b1d">No movemos ni tocamos tu dinero.</p></div>
+          <div class="trust-badge"><span>🙅</span><b data-i18n="trust.b2">No vendemos tus datos</b><p data-i18n="trust.b2d">Tu información no se vende ni se usa para anuncios.</p></div>
+          <div class="trust-badge"><span>🔐</span><b data-i18n="trust.b3">Bloqueo con Face ID</b><p data-i18n="trust.b3d">Protege la app con tu rostro o código.</p></div>
+          <div class="trust-badge"><span>💳</span><b data-i18n="trust.b4">Sin tarjetas completas</b><p data-i18n="trust.b4d">Solo guardamos un alias y los últimos 4 dígitos.</p></div>
+        </div>
+
+        <div class="faq-wrap reveal">
+          <div class="faq-item">
+            <button class="faq-q"><span data-i18n="faq.q1">¿Cuánto cuesta KLENDARS?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a"><p data-i18n="faq.a1">KLENDARS es una app de pago única en la App Store, sin compras dentro de la app ni suscripciones. Pagas una vez y listo.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span data-i18n="faq.q2">¿Ya está disponible?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a"><p data-i18n="faq.a2">Estamos en los últimos detalles antes de publicarla. Déjanos tu correo y te avisamos en cuanto esté en la App Store.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span data-i18n="faq.q3">¿En qué dispositivos funciona?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a"><p data-i18n="faq.a3">KLENDARS está hecha para iPhone, con widgets, Isla Dinámica y Live Activities. Tu información se sincroniza entre tus dispositivos.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span data-i18n="faq.q4">¿Necesito conectar mi banco?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a"><p data-i18n="faq.a4">No. KLENDARS no se conecta a tu banco ni mueve dinero. Tú registras lo que quieres llevar — es una herramienta de organización, no un banco.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span data-i18n="faq.q5">¿Es seguro y privado?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a"><p data-i18n="faq.a5">Sí. Bloqueo con Face ID, no guardamos números de tarjeta completos, y no vendemos tus datos. Puedes borrar tu cuenta y tu información cuando quieras.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q"><span data-i18n="faq.q6">¿En qué idiomas está?</span><span class="faq-ic">+</span></button>
+            <div class="faq-a"><p data-i18n="faq.a6">En español e inglés. La app sigue el idioma de tu iPhone automáticamente.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NEWS ============ -->
+    <section id="news">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow" data-i18n="news.eyebrow">Novedades</span>
+          <h2 data-i18n="news.title">Lo último de KLENDARS</h2>
+          <p data-i18n="news.sub">Sigue el camino hacia el lanzamiento y las nuevas funciones.</p>
+        </div>
+        <div class="news-grid">
+          <article class="news-card reveal">
+            <div class="news-cover tint-blue">🚀</div>
+            <div class="news-body">
+              <span class="news-tag" data-i18n="news1.tag">Lanzamiento</span>
+              <h3 data-i18n="news1.title">Camino a la App Store</h3>
+              <p data-i18n="news1.body">Estamos en los últimos detalles para llevar KLENDARS a tu iPhone. Muy pronto podrás descargarla.</p>
+              <div class="news-date" data-i18n="news1.date">Próximamente</div>
+            </div>
+          </article>
+          <article class="news-card reveal">
+            <div class="news-cover tint-green">🤝</div>
+            <div class="news-body">
+              <span class="news-tag" data-i18n="news2.tag">Funciones</span>
+              <h3 data-i18n="news2.title">Listas y gastos compartidos</h3>
+              <p data-i18n="news2.body">Comparte listas y divide gastos con amigos de forma simple, con todo sincronizado al instante.</p>
+              <div class="news-date" data-i18n="news2.date">Recién llegado</div>
+            </div>
+          </article>
+          <article class="news-card reveal">
+            <div class="news-cover tint-amber">📷</div>
+            <div class="news-body">
+              <span class="news-tag" data-i18n="news3.tag">Funciones</span>
+              <h3 data-i18n="news3.title">Escaneo de productos</h3>
+              <p data-i18n="news3.body">Escanea códigos de barras y fechas de caducidad para organizar tus compras sin escribir nada.</p>
+              <div class="news-date" data-i18n="news3.date">Recién llegado</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <span class="eyebrow" data-i18n="contact.eyebrow">Contacto</span>
+            <h2 data-i18n="contact.title">Hablemos</h2>
+            <p data-i18n="contact.sub">¿Tienes dudas, ideas o quieres enterarte del lanzamiento? Escríbenos, leemos todo.</p>
+            <a class="contact-link" href="mailto:support@klendars.com">✉️ support@klendars.com</a>
+          </div>
+          <form class="form reveal" id="contactForm">
+            <div class="field">
+              <label data-i18n="form.name">Nombre</label>
+              <input type="text" id="cName" required data-i18n-ph="form.name.ph" placeholder="Tu nombre" />
+            </div>
+            <div class="field">
+              <label data-i18n="form.email">Correo</label>
+              <input type="email" id="cEmail" required data-i18n-ph="form.email.ph" placeholder="tucorreo@ejemplo.com" />
+            </div>
+            <div class="field">
+              <label data-i18n="form.msg">Mensaje</label>
+              <textarea id="cMsg" required data-i18n-ph="form.msg.ph" placeholder="Cuéntanos en qué podemos ayudarte…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" data-i18n="form.send">Enviar mensaje</button>
+            <div class="form-note" data-i18n="form.note">Se abrirá tu app de correo para enviar el mensaje.</div>
+          </form>
+        </div>
+
+        <div style="height:64px"></div>
+
+        <div class="cta-band reveal">
+          <svg class="mochi-blob cta-mochi" style="color:var(--accent)" aria-hidden="true"><use href="#mochi-happy"/></svg>
+          <h2 data-i18n="cta.title">Sé de los primeros en probar KLENDARS</h2>
+          <p data-i18n="cta.sub">Déjanos tu correo y te avisamos en cuanto esté disponible en la App Store.</p>
+          <a href="mailto:support@klendars.com?subject=Quiero%20probar%20KLENDARS" class="btn btn-primary" data-i18n="cta.btn">Quiero enterarme</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="brand"><span class="logo">K</span> KLENDARS</a>
+          <p data-i18n="footer.tagline">Tu vida, organizada. Cuentas, listas y planes compartidos en una sola app, con Mochi.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.product">Producto</h4>
+          <a href="#features" data-i18n="nav.features">Funciones</a>
+          <a href="#mochi-sec" data-i18n="nav.mochi">Mochi</a>
+          <a href="#faq" data-i18n="nav.faq">FAQ</a>
+          <a href="#news" data-i18n="nav.news">Novedades</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.legal">Legal</h4>
+          <a href="privacy.html" data-i18n="footer.privacy">Política de Privacidad</a>
+          <a href="terms.html" data-i18n="footer.terms">Términos y Condiciones</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contacth">Contacto</h4>
+          <a href="mailto:support@klendars.com">support@klendars.com</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> New Horizons y Cargo LLC · <span data-i18n="footer.productOf">KLENDARS es un producto de New Horizons y Cargo LLC.</span></span>
+        <span data-i18n="footer.disclaimer">KLENDARS es una herramienta de organización, no un banco ni asesor financiero.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
