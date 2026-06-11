@@ -206,7 +206,8 @@ const I18N = {
     "footer.product": "Producto", "footer.legal": "Legal", "footer.contacth": "Contacto",
     "footer.privacy": "Política de Privacidad", "footer.terms": "Términos y Condiciones",
     "footer.disclaimer": "KLENDARS es una herramienta de organización, no un banco ni asesor financiero.",
-    "footer.productOf": "KLENDARS es un producto de New Horizons y Cargo LLC."
+    "footer.productOf": "KLENDARS es un producto de New Horizons y Cargo LLC.",
+    "footer.trademark": "KLENDARS™ es una marca de New Horizons y Cargo LLC."
   },
 
   en: {
@@ -412,7 +413,8 @@ const I18N = {
     "footer.product": "Product", "footer.legal": "Legal", "footer.contacth": "Contact",
     "footer.privacy": "Privacy Policy", "footer.terms": "Terms & Conditions",
     "footer.disclaimer": "KLENDARS is an organization tool, not a bank or financial advisor.",
-    "footer.productOf": "KLENDARS is a product of New Horizons y Cargo LLC."
+    "footer.productOf": "KLENDARS is a product of New Horizons y Cargo LLC.",
+    "footer.trademark": "KLENDARS™ is a trademark of New Horizons y Cargo LLC."
   }
 };
 
