@@ -164,7 +164,7 @@ const I18N = {
     "trust.b4": "Sin tarjetas completas", "trust.b4d": "Solo guardamos un alias y los últimos 4 dígitos.",
 
     "faq.q1": "¿Cuánto cuesta KLENDARS?",
-    "faq.a1": "KLENDARS es una app de pago única en la App Store, sin compras dentro de la app ni suscripciones. Pagas una vez y listo.",
+    "faq.a1": "KLENDARS es gratis. Descárgala y usa todas las funciones esenciales —cuentas, pagos, listas, presupuestos y recordatorios— sin pagar nada. Si quieres más, puedes desbloquear a Mochi, nuestro asistente con IA, con un único pago (sin suscripción). Y de vez en cuando lanzamos temas especiales, como Cosmos, que se compran por separado. Lo básico siempre es gratis; tú decides si quieres algo extra.",
     "faq.q2": "¿Ya está disponible?",
     "faq.a2": "Estamos en los últimos detalles antes de publicarla. Déjanos tu correo y te avisamos en cuanto esté en la App Store.",
     "faq.q3": "¿En qué dispositivos funciona?",
@@ -371,7 +371,7 @@ const I18N = {
     "trust.b4": "No full card numbers", "trust.b4d": "We only store an alias and the last 4 digits.",
 
     "faq.q1": "How much does KLENDARS cost?",
-    "faq.a1": "KLENDARS is a one-time paid app on the App Store, with no in-app purchases or subscriptions. Pay once and you're done.",
+    "faq.a1": "KLENDARS is free. Download it and use all the essential features —bills, payments, lists, budgets and reminders— at no cost. If you want more, you can unlock Mochi, our AI assistant, with a single one-time payment (no subscription). And every now and then we release special themes, like Cosmos, sold separately. The basics are always free; you decide if you want any extras.",
     "faq.q2": "Is it available yet?",
     "faq.a2": "We're putting the final touches before release. Leave us your email and we'll let you know the moment it's on the App Store.",
     "faq.q3": "What devices does it work on?",
